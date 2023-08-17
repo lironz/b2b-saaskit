@@ -2628,17 +2628,17 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-fogbender-react@^0.2.11:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/fogbender-react/-/fogbender-react-0.2.11.tgz#9b9905fb1f96164cefe99e5577710d21d186cd35"
-  integrity sha512-alBpvKDP7+nEzmn5d7FibQiLxEXTZgJCjcCq4Hc8piEAczY/hMIDKqc5ZMIJ9qjwR3AvRlyRUr69rm35ZPoBsg==
+fogbender-react@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/fogbender-react/-/fogbender-react-0.2.12.tgz#71f6f5c5ed44d0546e5c002378e1c1fa4eba602e"
+  integrity sha512-AbCAxseFotFx4qMYfl4mijpi81Aqb84plbkdNjL5PsYp43L9bfxGIvtAbX2LXy+nll4A0UXyRtAMdPvlrVP4dw==
   dependencies:
-    fogbender ">=0.2.1"
+    fogbender ">=0.2.2"
 
-fogbender@>=0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/fogbender/-/fogbender-0.2.1.tgz#31489b52e49d1d5df505cf5775972bbe44f938e4"
-  integrity sha512-sLnAmoM+s5XQOM+3p1YYrdzzChgJFO0RRHZQOE7gCWTDuIoPd/Pm1jx1AWd/w6IDYJDIabKEuz8Sz57yos0oyQ==
+fogbender@>=0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/fogbender/-/fogbender-0.2.2.tgz#fe2b5164f3240f4c86eca498b5c882ad5762b20b"
+  integrity sha512-uCJM3BCes7BnNKzOjkOYOhOcY7NfHGvGRw4Lp8vDIl6aVWgoAiIJbUAzIpKXls40lr7dX+DSmthYvNLsnmU7Yg==
   dependencies:
     solid-js "^1.2.6"
     twind "^0.16.16"
