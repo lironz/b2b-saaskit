@@ -15,7 +15,7 @@ export const getStripeConfig = () => {
 
 export const openStripe = ({ apiKey }: { apiKey: string }) =>
 	new Stripe(apiKey, {
-		apiVersion: '2022-11-15',
+		apiVersion: '2023-08-16',
 		typescript: true,
 	});
 
