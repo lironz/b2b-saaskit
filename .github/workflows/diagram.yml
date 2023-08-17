@@ -14,7 +14,6 @@ jobs:
       - name: Update diagram
         uses: githubocto/repo-visualizer@0.9.1
         with:
-          excluded_paths: "ignore,.github"
-          commit_message: "repo-viz: update diagram [skip ci]"
-          artifact_name: "diagram"
-          
+          excluded_paths: ignore,.github
+          commit_message: update diagram [skip ci]
+          artifact_name: diagram
