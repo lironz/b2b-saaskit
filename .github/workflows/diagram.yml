@@ -6,7 +6,7 @@ on:
       - main
       - develop
 jobs:
-  get_data:
+  create-diagram:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -17,3 +17,15 @@ jobs:
           excluded_paths: ignore,.github
           commit_message: update diagram [skip ci]
           artifact_name: diagram
+  # get the diagram created by prev job!
+  get-prev-diagram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get diagram artifacts (REST API)
+        id: get_diagram_artifacts
+        uses: octokit/request-action@v2.1.9
+        with:
+          route: GET /repos/${{ github.repository }}/actions/artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: '${{ steps.get_diagram_artifacts.outputs.data }}'"
