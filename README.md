@@ -1,7 +1,8 @@
 ![wink](https://github.com/fogbender/b2b-saaskit/assets/41166/4f00bef4-8db5-4568-9fe5-bcbfe08619a5)
 
 # Repo structure
-  https://github.com/githubocto/repo-visualizer
+
+https://github.com/githubocto/repo-visualizer
 
 ![Visualization of the codebase](./diagram.svg)
 
