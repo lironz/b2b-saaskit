@@ -9,9 +9,30 @@ updates:
   - package-ecosystem: npm
     # Look for `package.json` and `lock` files in the `root` directory
     directory: /
+    # Raise PR limit from 5
+    open-pull-requests-limit: 10
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: daily
+    groups:
+      non-major-dev:
+        update-types:
+        - "minor"
+        - "patch"
+        dependency-type: "development"
+      non-major-prod:
+        update-types:
+        - "minor"
+        - "patch"
+        dependency-type: "production"
+      major-dev:
+        update-types:
+        - "major"
+        dependency-type: "development"
+      major-prod:
+        update-types:
+        - "major"
+        dependency-type: "production"
 
   # Enable version updates for Docker
   - package-ecosystem: docker
@@ -20,3 +41,9 @@ updates:
     # Check for updates once a week
     schedule:
       interval: weekly
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
