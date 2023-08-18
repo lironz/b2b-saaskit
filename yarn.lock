@@ -2116,10 +2116,10 @@ drizzle-kit@^0.19.13:
     minimatch "^7.4.3"
     zod "^3.20.2"
 
-drizzle-orm@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/drizzle-orm/-/drizzle-orm-0.27.0.tgz#497691fc5b73fb8828400389cb4e0c77961387ba"
-  integrity sha512-LGiJ0icB+wQwgbSCOvAjONY8Ec6G/EDzQQP5PmUaQYeI9OqgpVKHC2T1fFIbvk5dabWsbokJ5NOciVAxriStig==
+drizzle-orm@^0.28.2:
+  version "0.28.2"
+  resolved "https://registry.yarnpkg.com/drizzle-orm/-/drizzle-orm-0.28.2.tgz#58c3bd2648a026732ec8df79a10766f7fa1b2246"
+  integrity sha512-QRyuzvpJr7GE6LpvZ/sg2nAKNg2if1uGGkgFTiXn4auuYId//vVJe6HBsDTktfKfcaDGzIYos+/f+PS5EkBmrg==
 
 dset@^3.1.2:
   version "3.1.2"
