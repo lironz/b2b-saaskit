@@ -17,6 +17,12 @@
         "useTabs": false,
         "singleQuote": false
       }
+    },
+    {
+      "files": "github/***.{yml,yaml}",
+      "options": {
+        "singleQuote": false
+      }
     }
   ]
 }
