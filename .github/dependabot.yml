@@ -14,9 +14,6 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: daily
-    labels:
-      - npm
-      - bump
 
   # Enable version updates for Docker
   - package-ecosystem: docker
@@ -25,13 +22,9 @@ updates:
     # Check for updates once a week
     schedule:
       interval: weekly
-    labels:
-      - docker
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
-    labels:
-      - github-actions
