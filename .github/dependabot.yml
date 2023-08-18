@@ -1,4 +1,4 @@
-# To get started with Dependabot version updates, you'll need to specify which
+# To get started with Dependabot version updates, youll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
@@ -14,25 +14,40 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: daily
+    labels:
+      - npm
+      - dep
     groups:
       non-major-dev:
+        labels:
+          - dev
+          - non-major
         update-types:
-          - 'minor'
-          - 'patch'
-        dependency-type: 'development'
+          - minor
+          - patch
+        dependency-type: development
       non-major-prod:
+        labels:
+          - prod
+          - non-major
         update-types:
-          - 'minor'
-          - 'patch'
-        dependency-type: 'production'
+          - minor
+          - patch
+        dependency-type: production
       major-dev:
+        labels:
+          - major
+          - dev
         update-types:
-          - 'major'
-        dependency-type: 'development'
+          - major
+        dependency-type: development
       major-prod:
+        labels:
+          - major
+          - prod
         update-types:
-          - 'major'
-        dependency-type: 'production'
+          - major
+        dependency-type: production
 
   # Enable version updates for Docker
   - package-ecosystem: docker
@@ -41,9 +56,15 @@ updates:
     # Check for updates once a week
     schedule:
       interval: weekly
+    labels:
+      - docker
+      - dep
 
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: 'weekly'
+      interval: weekly
+    labels:
+      - github-actions
+      - dep
