@@ -16,7 +16,7 @@ updates:
       interval: daily
     labels:
       - npm
-      - dep
+      - bump
     groups:
       non-major-dev:
         labels:
@@ -58,7 +58,7 @@ updates:
       interval: weekly
     labels:
       - docker
-      - dep
+      - bump
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: github-actions
@@ -67,4 +67,4 @@ updates:
       interval: weekly
     labels:
       - github-actions
-      - dep
+      - bump
