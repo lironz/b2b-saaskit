@@ -4403,10 +4403,10 @@ posthog-js@^1.69.0:
   dependencies:
     fflate "^0.4.1"
 
-posthog-node@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/posthog-node/-/posthog-node-3.1.1.tgz#f92c44a871552c9bfb98bf4cc8fd326d36af6cbd"
-  integrity sha512-OUSYcnLHbzvY/dxNsbUGoYuTZz5XNx48BkfiCkOIJZMFvot5VPQ0KWEjX+kzYxEwHeXbjW9plqsOVcYCYfidgg==
+posthog-node@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/posthog-node/-/posthog-node-3.1.2.tgz#89bbf099f2101b96907e2da2126db312083fd4bd"
+  integrity sha512-atPGYjiK+QvtseKKsrUxMrzN84sIVs9jTa7nx5hl999gJly1S3J5r0DApwZ69NKfJkVIeLTCJyT0kyS+7WqDSw==
   dependencies:
     axios "^0.27.0"
     rusha "^0.8.14"
