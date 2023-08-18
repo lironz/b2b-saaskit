@@ -761,10 +761,10 @@
     js-base64 "^3.7.2"
     url-join "4.0.1"
 
-"@propelauth/node@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@propelauth/node/-/node-2.1.1.tgz#e7f62128af70a8c64dbf22a6acd02da1aa01a187"
-  integrity sha512-XqTuDJvB5XFK3WwVIXNeOeqkMNb1RxO2Ix4r9l6Ydpac8WrkEp+ZMlJ621+WNwYyLuWByHzVPwyQd/mfsR3frQ==
+"@propelauth/node@^2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@propelauth/node/-/node-2.1.3.tgz#efcfb7815e3bd5558b1a0f0b16d7c3b754d69481"
+  integrity sha512-JfY09Zh74UAQXmLs2Yra5nX9/2yS69CmlRJo+uzQJ3kHw+bSZLmkKDtIxu4NstTTA6XVXW1352wD+qRL3B3OBQ==
   dependencies:
     jsonwebtoken "^9.0.0"
 
