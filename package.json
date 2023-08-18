@@ -40,7 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "astro": "^2.8.0",
-    "astro-seo": "^0.7.2",
+    "astro-seo": "^0.7.5",
     "clsx": "^1.2.1",
     "cookie": "^0.5.0",
     "drizzle-kit": "^0.19.3",
