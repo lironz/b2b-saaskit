@@ -17,7 +17,7 @@ updates:
     groups:
       astro:
         patterns:
-        - '@astro**'
+          - '@astro**'
 
   # Enable version updates for Docker
   - package-ecosystem: docker
