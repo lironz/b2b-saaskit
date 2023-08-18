@@ -64,7 +64,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.14.1",
-    "satori": "^0.10.1",
+    "satori": "^0.10.3",
     "solid-js": "^1.7.6",
     "stripe": "^13.1.0",
     "tsx": "^3.12.7",
