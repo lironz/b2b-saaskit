@@ -17,22 +17,22 @@ updates:
     groups:
       non-major-dev:
         update-types:
-        - "minor"
-        - "patch"
-        dependency-type: "development"
+          - 'minor'
+          - 'patch'
+        dependency-type: 'development'
       non-major-prod:
         update-types:
-        - "minor"
-        - "patch"
-        dependency-type: "production"
+          - 'minor'
+          - 'patch'
+        dependency-type: 'production'
       major-dev:
         update-types:
-        - "major"
-        dependency-type: "development"
+          - 'major'
+        dependency-type: 'development'
       major-prod:
         update-types:
-        - "major"
-        dependency-type: "production"
+          - 'major'
+        dependency-type: 'production'
 
   # Enable version updates for Docker
   - package-ecosystem: docker
@@ -43,7 +43,7 @@ updates:
       interval: weekly
 
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
