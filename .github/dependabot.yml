@@ -17,37 +17,6 @@ updates:
     labels:
       - npm
       - bump
-    groups:
-      non-major-dev:
-        labels:
-          - dev
-          - non-major
-        update-types:
-          - minor
-          - patch
-        dependency-type: development
-      non-major-prod:
-        labels:
-          - prod
-          - non-major
-        update-types:
-          - minor
-          - patch
-        dependency-type: production
-      major-dev:
-        labels:
-          - major
-          - dev
-        update-types:
-          - major
-        dependency-type: development
-      major-prod:
-        labels:
-          - major
-          - prod
-        update-types:
-          - major
-        dependency-type: production
 
   # Enable version updates for Docker
   - package-ecosystem: docker
@@ -58,7 +27,6 @@ updates:
       interval: weekly
     labels:
       - docker
-      - bump
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: github-actions
@@ -67,4 +35,3 @@ updates:
       interval: weekly
     labels:
       - github-actions
-      - bump
