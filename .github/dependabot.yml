@@ -14,6 +14,10 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: daily
+    groups:
+      astro:
+        patterns:
+        - '@astro**'
 
   # Enable version updates for Docker
   - package-ecosystem: docker
