@@ -64,6 +64,7 @@ jobs:
         run: |
           curl -L -o artifact.zip $ARTIFACT_URL
           ls -la
+          cat artifact.zip
           unzip -o artifact.zip -d diagrams/previous
       - name: Get current diagram
         uses: actions/download-artifact@v2
