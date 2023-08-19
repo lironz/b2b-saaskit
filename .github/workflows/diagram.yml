@@ -63,13 +63,14 @@ jobs:
           ARTIFACT_URL: ${{ fromJson(needs.get-latest-diagram.outputs.prev_artifact_url) }}
         run: |
           curl -L \
-            -H "Accept: application/vnd.github+json" \
+            -H "Accept: application/vnd.github+raw" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -o artifact.zip \
             $ARTIFACT_URL
+          mkdir -p ./diagrams/previous
+          unzip artifact.zip -d ./diagrams/previous
+          cd ./diagrams/previous
           ls -la
-          cat artifact.zip
-          unzip -o artifact.zip -d diagrams/previous
       - name: Get current diagram
         uses: actions/download-artifact@v2
         with:
