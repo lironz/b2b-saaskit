@@ -85,9 +85,8 @@ jobs:
       - name: Convert SVG to PNG
         run: |
           cd diagrams
-          for f in **/*.svg; do
-            convert "$f" "${f%.svg}.png"
-          done
+          magick convert previous.svg previous.png
+          magick convert current.svg current.png
       - name: Compare diagrams
         run: magick compare previous/diagram.png current/diafram.png /diff.png
       - name: Push diff
