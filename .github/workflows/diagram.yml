@@ -41,9 +41,10 @@ jobs:
       - name: Get previous diagram
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ARTIFACT: ${{ toJson(needs.get-latest-diagram.outputs.prev_artifact) }}
           ARTIFACT_URL: ${{ fromJson(needs.get-latest-diagram.outputs.prev_artifact).archive_download_url }}
         run: |
-          echo $ARTIFACT_URL
+          echo $ARTIFACT
           curl -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${GITHUB_TOKEN}" \
             -L "${ARTIFACT_URL}" \
