@@ -77,9 +77,9 @@ jobs:
           path: ./
       - name: Unzip current
         run: |
-          ls -la
-          unzip diagram.zip -d ./diagrams
-          mv ./diagrams/diagram.svg ./diagrams/current.svg
+          ls -R
+          mv ./diagram.svg ./diagrams/current.svg
+          ls -R
       - name: Setup compare tool - Image Magic
         run: |
           sudo apt-get install -y imagemagick
