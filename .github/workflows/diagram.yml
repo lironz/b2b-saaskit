@@ -27,8 +27,6 @@ jobs:
           script: |
             const data = ${{ steps.get_diagram_artifacts.outputs.data }};
             const art_zip_url = data.artifacts[0].archive_download_url;
-            console.log(art_zip_url);
-            console.log(art_zip_url.charAt(0));
             return art_zip_url;
 
   # create-diagram:
@@ -63,7 +61,7 @@ jobs:
       - name: Get previous diagram
         env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ARTIFACT_URL: ${{ needs.get-latest-diagram.outputs.prev_artifact_url }}
+          ARTIFACT_URL: ${{ toJson(needs.get-latest-diagram.outputs.prev_artifact_url) }}
         run: |
           echo "foo $ARTIFACT_URL bar"
           echo "curl -L -o artifact.zip $ARTIFACT_URL"
