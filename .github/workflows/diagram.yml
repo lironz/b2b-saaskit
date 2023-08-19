@@ -67,19 +67,18 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -o artifact.zip \
             $ARTIFACT_URL
-          mkdir -p ./diagrams/previous
+          mkdir -p ./diagrams
           unzip artifact.zip -d ./diagrams
+          rm artifact.zip
           mv ./diagrams/diagram.svg ./diagrams/previous.svg
       - name: Get current diagram
         uses: actions/download-artifact@v2
         with:
           name: diagram
-          path: ./
-      - name: Unzip current
+          path: ./diagram
+      - name: Prepare current
         run: |
-          ls -R
-          mv ./diagram.svg ./diagrams/current.svg
-          ls -R
+          mv ./diagram/diagram.svg ./diagrams/current.svg
       - name: Setup compare tool - Image Magic
         run: |
           sudo apt-get install -y imagemagick
