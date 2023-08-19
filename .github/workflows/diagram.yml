@@ -28,17 +28,17 @@ jobs:
             const data = ${{ steps.get_diagram_artifacts.outputs.data }};
             return data.artifacts[0].archive_download_url;
 
-  create-diagram:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@master
-      - name: Update diagram
-        uses: githubocto/repo-visualizer@0.9.1
-        with:
-          excluded_paths: ignore,.github
-          commit_message: update diagram [skip ci]
-          artifact_name: diagram
+  # create-diagram:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@master
+  #     - name: Update diagram
+  #       uses: githubocto/repo-visualizer@0.9.1
+  #       with:
+  #         excluded_paths: ignore,.github
+  #         commit_message: update diagram [skip ci]
+  #         artifact_name: diagram
 
   foo:
     runs-on: ubuntu-latest
