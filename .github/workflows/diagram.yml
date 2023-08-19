@@ -26,7 +26,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const data = ${{ steps.get_diagram_artifacts.outputs.data }};
-            return data.artifacts[0].archive_download_url;
+            const art_zip_url = data.artifacts[0].archive_download_url;
+            console.log(art_zip_url);
+            console.log(art_zip_url.charAt(0));
+            return art_zip_url;
 
   # create-diagram:
   #   runs-on: ubuntu-latest
