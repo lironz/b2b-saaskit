@@ -10,7 +10,7 @@ jobs:
   get-latest-diagram:
     runs-on: ubuntu-latest
     outputs:
-      latest_diagram_id: ${{ steps.get_1st_artifact_id.outputs.result.latest_diagram_id }}
+      prev_id: ${{ fromJson(steps.get_1st_artifact_id.outputs.result).latest_diagram_id }}
     steps:
       - name: Get diagram artifacts (REST API)
         id: get_diagram_artifacts
@@ -49,15 +49,17 @@ jobs:
       - create-diagram
     steps:
       - name: Get output from prev job
-        run: echo "${{ needs.get-latest-diagram.outputs.latest_diagram_id }}"
+        run: |
+          echo "direct: ${{ needs.get-latest-diagram.outputs.prev_id }}"
+          echo "env: ${{ env.PREV_ID }}"
       - name: Get previous diagram
         uses: octokit/request-action@v2.1.9
         id: get_artifact
         with:
-          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.latest_diagram_id }}/zip
+          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.prev_id }}/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PREV_ID: ${{ needs.get-latest-diagram.outputs.latest_diagram_id }}
+          PREV_ID: ${{ needs.get-latest-diagram.outputs.prev_id }}
       - name: Unzip previous diagram
         run: unzip -o ${{ steps.get_artifact.outputs.data }} -d diagrams/previous
       - name: Get current diagram
