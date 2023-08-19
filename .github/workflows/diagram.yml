@@ -46,7 +46,7 @@ jobs:
         uses: octokit/request-action@v2.1.9
         id: get_artifact
         with:
-          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ steps.get_1st_artifact_id.outputs.latest_diagram_id }}/zip
+          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.latest_diagram_id }}/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Unzip previous diagram
