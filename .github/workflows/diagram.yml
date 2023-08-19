@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ARTIFACT_URL: ${{ needs.get-latest-diagram.outputs.prev_artifact_url }}
         run: |
-          echo $ARTIFACT
+          echo $ARTIFACT_URL
           curl -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${GITHUB_TOKEN}" \
             -L "${ARTIFACT_URL}" \
