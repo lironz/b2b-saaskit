@@ -10,7 +10,9 @@ jobs:
   get-latest-diagram:
     runs-on: ubuntu-latest
     outputs:
-      prev_artifact: ${{ steps.get_diagram_artifacts.outputs.data.artifacts[0]}}
+      # the latest diagram artifact - a json from the REST API
+      prev_artifact: ${{ fromJson(steps.get_diagram_artifacts.outputs.data).artifacts[0] }}
+      # prev_artifact: ${{ steps.get_diagram_artifacts.outputs.data.artifacts[0]}}
     steps:
       - name: Get diagram artifacts (REST API)
         id: get_diagram_artifacts
