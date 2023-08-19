@@ -64,8 +64,8 @@ jobs:
         run: |
           echo $ARTIFACT_URL
           curl -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${GITHUB_TOKEN}" \
-            -L "${ARTIFACT_URL}" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -L $ARTIFACT_URL \
             -o artifact.zip
           unzip -o artifact.zip -d diagrams/previous
       - name: Get current diagram
