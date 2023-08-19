@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       # the latest diagram artifact - a json from the REST API
-      prev_artifact: ${{ fromJson(steps.get_diagram_artifacts.outputs.data).artifacts[0] }}
+      prev_artifact: ${{ toJson(steps.get_diagram_artifacts.outputs.data).artifacts[0] }}
       # prev_artifact: ${{ steps.get_diagram_artifacts.outputs.data.artifacts[0]}}
     steps:
       - name: Get diagram artifacts (REST API)
@@ -22,17 +22,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  create-diagram:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@master
-      - name: Update diagram
-        uses: githubocto/repo-visualizer@0.9.1
-        with:
-          excluded_paths: ignore,.github
-          commit_message: update diagram [skip ci]
-          artifact_name: diagram
+  # create-diagram:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@master
+  #     - name: Update diagram
+  #       uses: githubocto/repo-visualizer@0.9.1
+  #       with:
+  #         excluded_paths: ignore,.github
+  #         commit_message: update diagram [skip ci]
+  #         artifact_name: diagram
 
   foo:
     runs-on: ubuntu-latest
