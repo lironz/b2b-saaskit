@@ -85,17 +85,19 @@ jobs:
       - name: Convert SVG to PNG
         run: |
           cd diagrams
-          magick previous.svg previous.png
-          magick current.svg current.png
+          convert previous.svg previous.png
+          convert current.svg current.png
       - name: Compare diagrams
-        run: magick compare previous/diagram.png current/diafram.png /diff.png
+        run: |
+          cd diagrams
+          compare current.png previous.png diff.png
       - name: Push diff
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            const content = fs.readFileSync('/diff.png');
+            const content = fs.readFileSync('./diagrams/diff.png');
             github.repos.createOrUpdateFileContents({
               owner: context.repo.owner,
               repo: context.repo.repo,
