@@ -22,9 +22,15 @@ jobs:
       #  get 1st artifact id from response
       - name: Get 1st artifact id
         id: get_1st_artifact_id
-        run: |
-          echo "artifact id: ${{ steps.get_diagram_artifacts.outputs.data.artifacts[0].id }}"
-          echo "latest_diagram_id=${{ steps.get_diagram_artifacts.outputs.data.artifacts[0].id }}" >> "$GITHUB_OUTPUT"
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const artifacts = ${{ steps.get_diagram_artifacts.outputs.data.artifacts }};
+            const latest_diagram_id = artifacts[0].id;
+            // log
+            console.log(`latest_diagram_id: ${latest_diagram_id}`);
+            return { latest_diagram_id };
   create-diagram:
     runs-on: ubuntu-latest
     steps:
