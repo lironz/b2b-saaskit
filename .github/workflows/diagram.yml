@@ -68,14 +68,18 @@ jobs:
             -o artifact.zip \
             $ARTIFACT_URL
           mkdir -p ./diagrams/previous
-          unzip artifact.zip -d ./diagrams/previous
-          cd ./diagrams/previous
-          ls -la
+          unzip artifact.zip -d ./diagrams
+          mv ./diagrams/diagram.svg ./diagrams/previous.svg
       - name: Get current diagram
         uses: actions/download-artifact@v2
         with:
           name: diagram
-          path: diagrams/current
+          path: ./
+      - name: Unzip current
+        run: |
+          ls -la
+          unzip diagram.zip -d ./diagrams
+          mv ./diagrams/diagram.svg ./diagrams/current.svg
       - name: Setup compare tool - Image Magic
         run: |
           sudo apt-get install -y imagemagick
