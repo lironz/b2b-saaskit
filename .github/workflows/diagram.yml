@@ -40,10 +40,14 @@ jobs:
     steps:
       - name: Get previous diagram
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ARTIFACT_URL: ${{ fromJson(needs.get-latest-diagram.outputs.prev_artifact).archive_download_url }}
+        # curl to download file from github, use auth!
         run: |
-          curl -L -o artifact.zip ${{ env.ARTIFACT_URL }}
-          echo "::set-output name=data::artifact.zip"
+          curl -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${GITHUB_TOKEN}" \
+            -L "${ARTIFACT_URL}" \
+            -o artifact.zip
           unzip -o artifact.zip -d diagrams/previous
       - name: Get current diagram
         uses: actions/download-artifact@v2
