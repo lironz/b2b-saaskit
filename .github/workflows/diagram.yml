@@ -60,12 +60,10 @@ jobs:
     steps:
       - name: Get previous diagram
         env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ARTIFACT_URL: ${{ fromJson(needs.get-latest-diagram.outputs.prev_artifact_url) }}
         run: |
-          echo "foo $ARTIFACT_URL bar"
-          echo "curl -L -o artifact.zip $ARTIFACT_URL"
           curl -L -o artifact.zip $ARTIFACT_URL
+          ls -la
           unzip -o artifact.zip -d diagrams/previous
       - name: Get current diagram
         uses: actions/download-artifact@v2
