@@ -10,7 +10,7 @@ jobs:
   get-latest-diagram:
     runs-on: ubuntu-latest
     outputs:
-      latest_diagram_id: ${{ steps.get_1st_artifact_id.outputs.latest_diagram_id }}
+      latest_diagram_id: ${{ steps.get_1st_artifact_id.outputs.result.latest_diagram_id }}
     steps:
       - name: Get diagram artifacts (REST API)
         id: get_diagram_artifacts
@@ -19,7 +19,6 @@ jobs:
           route: GET /repos/${{ github.repository }}/actions/artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  get 1st artifact id from response
       - name: Get 1st artifact id
         id: get_1st_artifact_id
         uses: actions/github-script@v3
@@ -28,6 +27,7 @@ jobs:
           script: |
             const data = ${{ steps.get_diagram_artifacts.outputs.data }};
             const latest_diagram_id = data.artifacts[0].id;
+            console.log(`latest_diagram_id: ${latest_diagram_id}`);
             return { latest_diagram_id };
 
   create-diagram:
@@ -41,6 +41,7 @@ jobs:
           excluded_paths: ignore,.github
           commit_message: update diagram [skip ci]
           artifact_name: diagram
+
   compare-diagrams:
     runs-on: ubuntu-latest
     needs:
@@ -51,9 +52,10 @@ jobs:
         uses: octokit/request-action@v2.1.9
         id: get_artifact
         with:
-          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.result.latest_diagram_id }}/zip
+          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ env.PREV_ID }}/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PREV_ID: ${{ needs.get-latest-diagram.outputs.latest_diagram_id }}
       - name: Unzip previous diagram
         run: unzip -o ${{ steps.get_artifact.outputs.data }} -d diagrams/previous
       - name: Get current diagram
