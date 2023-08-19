@@ -28,9 +28,8 @@ jobs:
           script: |
             const artifacts = ${{ steps.get_diagram_artifacts.outputs.data.artifacts }};
             const latest_diagram_id = artifacts[0].id;
-            // log
-            console.log(`latest_diagram_id: ${latest_diagram_id}`);
             return { latest_diagram_id };
+
   create-diagram:
     runs-on: ubuntu-latest
     steps:
@@ -52,7 +51,7 @@ jobs:
         uses: octokit/request-action@v2.1.9
         id: get_artifact
         with:
-          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.latest_diagram_id }}/zip
+          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.result }}/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Unzip previous diagram
