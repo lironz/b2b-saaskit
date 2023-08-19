@@ -52,7 +52,7 @@ jobs:
         uses: octokit/request-action@v2.1.9
         id: get_artifact
         with:
-          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ env.PREV_ID }}/zip
+          route: GET /repos/${{ github.repository }}/actions/artifacts/${{ needs.get-latest-diagram.outputs.latest_diagram_id }}/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PREV_ID: ${{ needs.get-latest-diagram.outputs.latest_diagram_id }}
