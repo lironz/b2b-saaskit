@@ -82,8 +82,9 @@ jobs:
       - name: Setup compare tool - Image Magic
         run: |
           sudo apt-get update
-          sudo apt-get install -y --install-missing \
+          sudo apt-get install -y \
             imagemagick ttf-mscorefonts-installer inkscape fontconfig
+          sudo apt-get update  --install-missing
       - name: Convert SVG to PNG
         run: |
           cd diagrams
