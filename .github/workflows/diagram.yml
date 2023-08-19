@@ -49,7 +49,7 @@ jobs:
       - create-diagram
     steps:
       - name: Get output from prev job
-        run: echo "${{ toJson(needs.get-latest-diagram.outputs) }}" > output.json
+        run: echo "${{ needs.get-latest-diagram.outputs.latest_diagram_id }}"
       - name: Get previous diagram
         uses: octokit/request-action@v2.1.9
         id: get_artifact
