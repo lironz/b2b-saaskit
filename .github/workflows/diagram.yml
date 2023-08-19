@@ -81,7 +81,7 @@ jobs:
           mv ./diagram/diagram.svg ./diagrams/current.svg
       - name: Setup compare tool - Image Magic
         run: |
-          sudo apt-get install -y imagemagick
+          sudo apt-get install -y imagemagick ttf-mscorefonts-installer inkscape fontsconfig
       - name: Convert SVG to PNG
         run: |
           cd diagrams
