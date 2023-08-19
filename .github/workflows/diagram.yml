@@ -40,13 +40,63 @@ jobs:
   #         commit_message: update diagram [skip ci]
   #         artifact_name: diagram
 
-  foo:
+  # foo:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - get-latest-diagram
+  #   steps:
+  #     - name: bar
+  #       env:
+  #         ARTIFACT_URL: ${{ needs.get-latest-diagram.outputs.prev_artifact_url }}
+  #       run: |
+  #         echo $ARTIFACT_URL
+
+  compare-diagrams:
     runs-on: ubuntu-latest
     needs:
       - get-latest-diagram
+      # - create-diagram
     steps:
-      - name: bar
+      - name: Get previous diagram
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ARTIFACT_URL: ${{ needs.get-latest-diagram.outputs.prev_artifact_url }}
         run: |
-          echo $ARTIFACT_URL
+          echo $ARTIFACT
+          curl -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${GITHUB_TOKEN}" \
+            -L "${ARTIFACT_URL}" \
+            -o artifact.zip
+          unzip -o artifact.zip -d diagrams/previous
+      - name: Get current diagram
+        uses: actions/download-artifact@v2
+        with:
+          name: diagram
+          path: diagrams/current
+      - name: Setup compare tool - Image Magic
+        run: |
+          sudo apt-get install -y imagemagick
+      - name: Convert SVG to PNG
+        run: |
+          cd diagrams
+          for f in **/*.svg; do
+            convert "$f" "${f%.svg}.png"
+          done
+      - name: Compare diagrams
+        run: magick compare previous/diagram.png current/diafram.png /diff.png
+      - name: Push diff
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const content = fs.readFileSync('/diff.png');
+            github.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: 'diff.png',
+              message: 'update diff',
+              content: content.toString('base64'),
+              sha: context.sha,
+              branch: context.ref.replace('refs/heads/', ''),
+            });
