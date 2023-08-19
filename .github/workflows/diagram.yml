@@ -63,8 +63,8 @@ jobs:
           ARTIFACT_URL: ${{ fromJson(needs.get-latest-diagram.outputs.prev_artifact_url) }}
         run: |
           curl -L \
-            -H "Accept: application/vnd.github+json"
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             $ARTIFACT_URL
           ls -la
           cat artifact.zip
