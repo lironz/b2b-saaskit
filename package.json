@@ -39,7 +39,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "astro": "^2.8.0",
+    "astro": "^2.10.13",
     "astro-seo": "^0.7.6",
     "clsx": "^2.0.0",
     "cookie": "^0.5.0",
