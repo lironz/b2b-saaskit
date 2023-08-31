@@ -53,7 +53,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
     "fogbender-react": "^0.2.11",
-    "jotai": "^2.4.0",
+    "jotai": "^2.4.1",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "postgres": "^3.3.4",
