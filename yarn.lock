@@ -4590,10 +4590,10 @@ postgres@^3.3.4:
   resolved "https://registry.yarnpkg.com/postgres/-/postgres-3.3.5.tgz#8431605aae2112759d50e362fc08759165455677"
   integrity sha512-+JD93VELV9gHkqpV5gdL5/70HdGtEw4/XE1S4BC8f1mcPmdib3K5XsKVbnR1XcAyC41zOnifJ+9YRKxdIsXiUw==
 
-posthog-js@^1.77.2:
-  version "1.77.2"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.77.2.tgz#c5ecb2dc0b0e732fe05f50920ec22a30e3db4916"
-  integrity sha512-I3l5GipPUFe6qd5/0Bgm8Ot4pF8ysWhNgeLWvk69myh58HREfXACgLSYMZBho6L9xC6OcFvQilpcH+Dj3Y2uIQ==
+posthog-js@^1.78.5:
+  version "1.78.5"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.78.5.tgz#ea610043cde66f656b99ff937a9c9725fcc67e4f"
+  integrity sha512-UUipML52LEyks7Pbx/3dpBJc2iPJrW+Ss6Y0BiIygn+QZoBjIe1WjE4Ep+Fnz7+cX1axex/ZiYholBnW7E4Aug==
   dependencies:
     fflate "^0.4.1"
 
