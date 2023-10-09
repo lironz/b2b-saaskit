@@ -4581,10 +4581,10 @@ postgres@^3.3.4:
   resolved "https://registry.yarnpkg.com/postgres/-/postgres-3.3.5.tgz#8431605aae2112759d50e362fc08759165455677"
   integrity sha512-+JD93VELV9gHkqpV5gdL5/70HdGtEw4/XE1S4BC8f1mcPmdib3K5XsKVbnR1XcAyC41zOnifJ+9YRKxdIsXiUw==
 
-posthog-js@^1.82.1:
-  version "1.82.1"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.82.1.tgz#3a1ed825742b9ed6daab7f29b543aa15f2df244c"
-  integrity sha512-VqOq11ztae7d8s3cwezct91aeklJGXKRwHw1799F99EzgI+SWtF2tZF2tBvA1Nid0hWBE/R1vUwlO1Qeeb16ng==
+posthog-js@^1.82.3:
+  version "1.82.3"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.82.3.tgz#2d00763a1b51be7d47f00edc1be5557da2d7afe6"
+  integrity sha512-qu0CPV/TiL2q5uUufhfj1mScg3920ChmrTl2Er+zY3/LdkyofZhk8RDYdgIuWm6ATonqy71K37csedOLwQe2iQ==
   dependencies:
     fflate "^0.4.1"
 
