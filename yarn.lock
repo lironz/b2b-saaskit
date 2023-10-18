@@ -1121,10 +1121,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/js-cookie@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.3.tgz#d6bfbbdd0c187354ca555213d1962f6d0691ff4e"
-  integrity sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==
+"@types/js-cookie@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.5.tgz#5eba4033a4f17fb2b29d975892694315194eca33"
+  integrity sha512-dtLshqoiGRDHbHueIT9sjkd2F4tW1qPSX2xKAQK8p1e6pM+Z913GM1shv7dOqqasEMYbC5zEaClJomQe8OtQLA==
 
 "@types/json-schema@^7.0.9":
   version "7.0.12"
