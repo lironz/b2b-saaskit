@@ -35,7 +35,7 @@
     "@types/cookie": "^0.5.2",
     "@types/js-cookie": "^3.0.3",
     "@types/jsonwebtoken": "^9.0.2",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.2.39",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
