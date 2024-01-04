@@ -5055,10 +5055,10 @@ semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.3, semver@^7.5.4:
   dependencies:
     lru-cache "^6.0.0"
 
-seroval@^0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/seroval/-/seroval-0.5.1.tgz#e6d17365cdaaae7e50815c7e0bcd7102facdadf3"
-  integrity sha512-ZfhQVB59hmIauJG5Ydynupy8KHyr5imGNtdDhbZG68Ufh1Ynkv9KOYOAABf71oVbQxJ8VkWnMHAjEHE7fWkH5g==
+seroval@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/seroval/-/seroval-1.0.2.tgz#ec5f5026239ed0d6935139482353d9648e875835"
+  integrity sha512-buswWxRzf65ZGUk8MAf3qVtBJHbe5gq6hZyPeqlJCKEIl/tEhUZze0YJg7vB7tFRGgPeneRaP083OB/vDiYLvA==
 
 server-destroy@^1.0.1:
   version "1.0.1"
@@ -5121,13 +5121,13 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-solid-js@^1.2.6, solid-js@^1.7.11:
-  version "1.7.11"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.7.11.tgz#c37706382bcfd563459810434b1382b550c27867"
-  integrity sha512-JkuvsHt8jqy7USsy9xJtT18aF9r2pFO+GB8JQ2XGTvtF49rGTObB46iebD25sE3qVNvIbwglXOXdALnJq9IHtQ==
+solid-js@^1.2.6, solid-js@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.8.8.tgz#14a7e3e59677628bce6ef1ebb18e8c64fd4f1ddb"
+  integrity sha512-9CtL5xWTYX1WWjQKqht3Tl0AJzgz4YWVQk8hoscO9TzRCgzlpAauEOexXa6bPG30W+fWLnFVE7XUiAzQFNeUKw==
   dependencies:
     csstype "^3.1.0"
-    seroval "^0.5.0"
+    seroval "^1.0.2"
 
 source-map-js@^1.0.2:
   version "1.0.2"
