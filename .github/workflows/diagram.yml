@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Get diagram artifacts (REST API)
         id: get_diagram_artifacts
-        uses: octokit/request-action@v2.1.9
+        uses: octokit/request-action@v2.3.0
         with:
           route: GET /repos/${{ github.repository }}/actions/artifacts
         env:
